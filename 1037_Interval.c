@@ -2,7 +2,7 @@
 
 int main()
 {
-    double N;
+    float N;
     scanf("%f", &N);
 
     if (N < 0 || N > 100)
