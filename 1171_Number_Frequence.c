@@ -1,24 +1,26 @@
-#include<stdio.h>
-#include<string.h>
-#define N 2001
+#include <stdio.h>
+
 int main()
 {
-      int test,n,i,j;
-      int array[N];
-       while(scanf("%d",&test)==1){
-          memset(array,0,sizeof array);
+  int n, x, counter[2001], i;
 
-            for(i=1;i<=test;i++){
-              scanf("%d",&n);
-              array[n]++;
-         }
-          for(i=0;i<N;i++)
-          for(j=0;j<array[i];j++){
-          if(array[i]>0)
-          printf("%d aparece %d vez(es)\n",i,array[i]);
-          break;
-      }
-
+  for (i = 0; i <= 2000; i++)
+  {
+    counter[i] = 0;
+  }
+  scanf("%d", &n);
+  for (i = 0; i < n; i++)
+  {
+    scanf("%d", &x);
+    counter[x]++;
+  }
+  for (i = 1; i <= 2000; i++)
+  {
+    if (counter[i] > 0)
+    {
+      printf("%d aparece %d vez(es)\n", i, counter[i]);
     }
-      return 0;
+  }
+
+  return 0;
 }

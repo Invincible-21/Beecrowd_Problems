@@ -28,8 +28,8 @@ int main()
         printf("Inter venceu mais\n");
     else if (y > x)
         printf("Gremio venceu mais\n");
-    else
-        printf("Não houve vencedor\n");
+    // else
+    //     printf("Não houve vencedor\n");
 
     return 0;
 }
