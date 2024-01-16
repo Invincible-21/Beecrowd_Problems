@@ -7,8 +7,7 @@ int main()
     int i;
     double x, y;
 
-    for (i = 1; i <= n; i++)
-    {
+    for (i = 1; i <= n; i++){
         scanf("%lf %lf", &x, &y);
 
         if (x != 0 && y != 0)
