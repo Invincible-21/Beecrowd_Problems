@@ -3,14 +3,19 @@ using namespace std;
 
 int main(){
 
+    int cnt = 0;
+
     while(1){
         int n; cin >> n;
         if(n == 0) return 0;
 
-        vector<string>v;
-    
-        int sz = -1;
+        if(cnt != 0){
+             cout << '\n';
+        }
 
+        vector<string>v;
+        int sz = -1;
+        int p = n-1;
         while(n--){
             string s; cin >> s;
             int ss = s.size();
@@ -26,7 +31,8 @@ int main(){
             }
             cout << x << '\n';
         }
-        cout << '\n';
+
+        cnt++;
     }
 
     return 0;
