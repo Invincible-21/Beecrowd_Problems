@@ -1,33 +1,33 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
 
-typedef long long ll;
-
-int pp(int tt){
-    int i,j,ct=1;
-    for(i=0; i<=tt; i++){
-        for(j=i-1; j>=0; j--){
-            ct++;
+int32_t main(){
+    int n, t = 1;
+    while(cin >> n){
+        int no = 0; // total no. of elements
+        for(int i=1; i<=n; i++){
+            no += i;
         }
-    }
-    return ct;
-}
+        no++;
 
-int main()
-{
-    int n, cnt = 0;
-    while(scanf("%d",&n)!=EOF){
-       cnt++;
-       if(n==0) cout<<"Caso "<<cnt<<": 1 numero\n";
-       else cout<<"Caso "<<cnt<<": "<<pp(n)<<" numeros\n";
-       cout<<"0";
+        if(no == 1){
+            printf("Caso %d: %d numero\n", t, no);
+            cout << "0\n\n";
+        }else{
+            printf("Caso %d: %d numeros\n", t, no);
+            cout << "0";
 
-       for(int i=1; i<=n; i++){
-            for(int j=1; j<=i; j++) printf(" %d",i);
-       }
-       printf("\n\n");
+            for(int i=0; i<=n; i++){
+                int x = i;
+                while(x--){
+                    cout << " " << i;
+                }
+            }cout << "\n\n";
+        }
+
+        t++; // test case
     }
 
     return 0;
 }
-

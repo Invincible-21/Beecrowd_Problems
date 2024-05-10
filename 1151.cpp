@@ -1,30 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
 
+int32_t main(){
+    int n; cin >> n;
+    int arr[n];
+    arr[0] = 0;
+    arr[1] = 1;
 
-int main(){
-
-    int n, t1=0, t2=1, nextTerm = 0;
-    cin>>n;
-    for(int i=1; i<=n; ++i){
-        if(i==1){
-            cout<<t1<<" ";
-            continue;
-        }
-        if(i==2){
-            cout<<t2<<" ";
-            continue;
-        }
-        nextTerm = t1+t2;
-        t1 = t2;
-        t2 = nextTerm;
-
-        cout<<nextTerm<<" ";
+    for(int i=2; i<n; i++){
+        arr[i] = arr[i-1] + arr[i-2];
     }
 
+    for(int i=0; i<n-1; i++) cout << arr[i] << " ";
+    cout << arr[n-1] << '\n';
 
     return 0;
 }
-
-// :(
-
