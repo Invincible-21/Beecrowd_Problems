@@ -1,62 +1,53 @@
-#include <stdio.h>
+#include<bits/stdc++.h>
+using namespace std;
 
-int main()
-{
-    int n100, n50, n20, n10, n5, n2;
-    int m1, m50, m25, m10, m05, m01;
-    double n;
+int main(){
+    double n; cin >> n;
 
-    scanf("%lf", &n);
-    int notas = n;
-    int moedas = (n - notas) * 100;
+    int taka = n;
+    int poisa = (n - taka) * 100;
 
-    if ((moedas * 1000) % 10 == 9)
-    {
-        moedas++;
-    }
+    int n100 = taka / 100;
+    taka %= 100;
+    int n50 = taka / 50;
+    taka %= 50;
+    int n20 = taka / 20;
+    taka %= 20;
+    int n10 = taka / 10;
+    taka %= 10;
+    int n5 = taka / 5;
+    taka %= 5;
+    int n2 = taka / 2;
+    taka %= 2;
 
-    n100 = notas / 100;
-    notas = notas % 100;
-    n50 = notas / 50;
-    notas = notas % 50;
-    n20 = notas / 20;
-    notas = notas % 20;
-    n10 = notas / 10;
-    notas = notas % 10;
-    n5 = notas / 5;
-    notas = notas % 5;
-    n2 = notas / 2;
-    notas = notas % 2;
+    int p1 = taka / 1;
+    int p50 = poisa / 50;
+    poisa %= 50;
+    int p25 = poisa / 25;
+    poisa %= 25;
+    int p10 = poisa / 10;
+    poisa %= 10;
+    int p5 = poisa / 5;
+    poisa %= 5;
+    int p01 = poisa / 1;
 
-    m1 = notas / 1;
-    notas = notas % 1;
-    m50 = moedas / 50;
-    moedas = moedas % 50;
-    m25 = moedas / 25;
-    moedas = moedas % 25;
-    m10 = moedas / 10;
-    moedas = moedas % 10;
-    m05 = moedas / 5;
-    moedas = moedas % 5;
-    m01 = moedas / 1;
+    cout << "NOTAS:\n";
+    cout << n100 << " nota(s) de R$ 100.00\n";
+    cout << n50 << " nota(s) de R$ 50.00\n";
+    cout << n20 << " nota(s) de R$ 20.00\n";
+    cout << n10 << " nota(s) de R$ 10.00\n";
+    cout << n5 << " nota(s) de R$ 5.00\n";
+    cout << n2 << " nota(s) de R$ 2.00\n";
 
-    printf("NOTAS:\n");
 
-    printf("%d nota(s) de R$ 100.00\n", n100);
-    printf("%d nota(s) de R$ 50.00\n", n50);
-    printf("%d nota(s) de R$ 20.00\n", n20);
-    printf("%d nota(s) de R$ 10.00\n", n10);
-    printf("%d nota(s) de R$ 5.00\n", n5);
-    printf("%d nota(s) de R$ 2.00\n", n2);
+    cout << "MOEDAS:\n";
+    cout << p1 << " moeda(s) de R$ 1.00\n";
+    cout << p50 << " moeda(s) de R$ 0.50\n";
+    cout << p25 << " moeda(s) de R$ 0.25\n";
+    cout << p10 << " moeda(s) de R$ 0.10\n";
+    cout << p5 << " moeda(s) de R$ 0.05\n";
+    cout << p01 << " moeda(s) de R$ 0.01\n";
 
-    printf("MOEDAS:\n");
-
-    printf("%d moeda(s) de R$ 1.00\n", m1);
-    printf("%d moeda(s) de R$ 0.50\n", m50);
-    printf("%d moeda(s) de R$ 0.25\n", m25);
-    printf("%d moeda(s) de R$ 0.10\n", m10);
-    printf("%d moeda(s) de R$ 0.05\n", m05);
-    printf("%d moeda(s) de R$ 0.01\n", m01);
 
     return 0;
 }
