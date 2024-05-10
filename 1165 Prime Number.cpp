@@ -1,32 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-const int N = 1e7+10;
-
-vector<bool> isPrime(N,1);
-
+bool isPrime(int x){
+    for(int i=2; i*i<=x; i++){
+        if(x % i == 0) return false;
+    }
+    return true;
+}
 
 int main(){
-
-    isPrime[0] = isPrime[1] = false;
-
-    for(int i=2; i<N; ++i){
-        if(isPrime[i] == true){
-            for(int j = 2*i; j<N; j += i){
-                isPrime[j] = false;
-            }
-        }
-    }
-
-
-    int q; cin>>q;
-    while(q--){
-        int num; cin>>num;
-        if(isPrime[num]){
-            cout<<num<<" "<<"eh primo"<<endl;
-        }else{
-            cout<<num<<" "<<"nao eh primo"<<endl;
-        }
+    int t; cin >> t;
+    while(t--){
+        int x; cin >> x;
+        if(isPrime(x)) cout << x << " eh primo\n";
+        else cout << x << " nao eh primo\n";
     }
 
     return 0;
