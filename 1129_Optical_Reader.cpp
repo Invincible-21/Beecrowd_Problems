@@ -1,64 +1,38 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
 
-typedef long long ll;
+int32_t main(){
+    while(1){
+        int t; cin >> t;
+        if(t == 0) return 0;
 
-int main()
-{
-    int n;
-    while(n!=0){
-        cin>>n;
-        for(int i=0; i<n; i++){
-            int a,b,c,d,e,tc=0;
-            cin>>a>>b>>c>>d>>e;
+        while(t--){
+            int arr[5];
+            for(int i=0; i<5; i++) cin >> arr[i];
 
-            if(a<=127){
-                tc++;
-                a=1;
-            }else{
-                a=0;
+            int idx, cnt = 0;
+            for(int i=0; i<5; i++){
+                if(arr[i] <= 127){
+                    idx = i;
+                    cnt++;
+                }
             }
 
-            if(b<=127){
-                tc++;
-                b=1;
-            }else{
-                b=0;
+            if(cnt == 1){
+                if(idx == 0) cout << "A\n";
+                if(idx == 1) cout << "B\n";
+                if(idx == 2) cout << "C\n";
+                if(idx == 3) cout << "D\n";
+                if(idx == 4) cout << "E\n";
             }
+            else cout << "*\n";
 
-            if(c<=127){
-                tc++;
-                c=1;
-            }else{
-                c=0;
-            }
+            // cout << idx << " " << cnt << '\n';
 
-            if(d<=127){
-                tc++;
-                d=1;
-            }else{
-                d=0;
-            }
-
-            if(e<=127){
-                tc++;
-                e=1;
-            }else{
-                e=0;
-            }
-
-            if(tc==1){
-                if(a==1) cout<<"A\n";
-                if(b==1) cout<<"B\n";
-                if(c==1) cout<<"C\n";
-                if(d==1) cout<<"D\n";
-                if(e==1) cout<<"E\n";
-            }else{
-                cout<<"*\n";
-            }
         }
+
     }
 
     return 0;
 }
-
