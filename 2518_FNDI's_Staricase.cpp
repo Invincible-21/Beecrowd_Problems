@@ -2,9 +2,16 @@
 using namespace std;
 
 int main(){
-    int n,h,c,l;
-    while(cin>>n>>h>>c>>l){
-        printf("%.4f\n", (n * 1.0 * sqrt(c*c + h*h) * l) / 10000.0);
-    }
+    int n; 
+    while(cin >> n){
+        double h, c, l; cin >> h >> c >> l;
+        double x = sqrt(pow(h, 2) + pow(c, 2));
+        double ab = x * l;
+        double area = ab * n;
+        
+        double ans = area / 10000; // sq cm to sq m
+        printf("%.4lf\n", ans);
+        }
+
     return 0;
 }
